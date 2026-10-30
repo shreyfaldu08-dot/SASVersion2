@@ -54,8 +54,27 @@ body{margin:0;background:#ffffff}
 .chip{display:inline-block;padding:6px 12px;background:#ffffff;border:1px solid #073b6340;font-size:13px;color:#073b63}
 .caprow{display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:20px;padding:18px 0;border-top:1px solid #4b8db34d;color:#ffffff;text-decoration:none}
 .caprow:last-child{border-bottom:1px solid #4b8db34d}
+.capitem{border-top:1px solid #4b8db34d}
+.capitem:last-child{border-bottom:1px solid #4b8db34d}
+.capbtn{width:100%;display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:20px;padding:27px 0;border:0;background:none;font-family:inherit;color:#ffffff;cursor:pointer;text-align:left;transition:color 180ms ease}
+.capbtn:hover{color:#4b8db3}
+.capbtn .capnum{font-size:14px;color:#4b8db3;font-weight:600;font-family:var(--font-mono, monospace);transition:color 180ms ease}
+.capbtn .captitle{display:block;font-size:22px;font-weight:300;transition:color 180ms ease}
+.capbtn .caparr{display:inline-flex;align-items:center;justify-content:center;color:#4b8db3;width:24px;flex-shrink:0;transition:color 180ms ease}
+.capbtn:hover .caparr{color:#ffffff}
+.capbtn[aria-expanded="true"] .caparr{color:#ffffff}
+.capbody{padding:0 32px 20px 76px}
+.capbody p{font-size:15px;line-height:1.7;color:#9fb9d5;margin:0}
 .acc{width:100%;display:flex;justify-content:space-between;align-items:center;padding:24px 0;border:0;border-bottom:1px solid #073b6333;background:none;font-family:inherit;font-size:22px;font-weight:300;color:#073b63;cursor:pointer;text-align:left}
 .acc .sg{font-size:22px;font-weight:300;color:#4b8db3;width:24px;text-align:center}
+.stepbtn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;border:0;background:none;font-family:inherit;font-size:17px;font-weight:400;color:#073b63;cursor:pointer;text-align:left;transition:color 180ms ease}
+.stepbtn:hover{color:#4b8db3}
+.stepbtn .stepnum{color:#4b8db3;width:24px;font-weight:600;font-size:15px;flex-shrink:0;transition:color 180ms ease}
+.stepbtn .steparr{display:inline-flex;align-items:center;justify-content:center;color:#4b8db3;width:24px;flex-shrink:0;transition:color 180ms ease}
+.stepbtn:hover .steparr{color:#073b63}
+.stepbtn[aria-expanded="true"] .steparr{color:#073b63}
+.stepbody{padding:0 0 20px 48px}
+.stepbody p{font-size:15px;line-height:1.7;color:#45607f;margin:0}
 .flink{color:#ffffff;text-decoration:none;font-size:15px;line-height:2.1}
 .flink:hover{color:#4b8db3}
 .fbig{display:block;padding:22px 0;border-top:1px solid #4b8db34d;font-size:13px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#ffffff;text-decoration:none}
@@ -84,7 +103,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
  .statsimg{display:none!important}
  .ctaimg{display:none!important}
 }
-@media (max-width:620px){.g4,.gfoot{grid-template-columns:1fr!important}.caprow{grid-template-columns:48px 1fr!important}.caprow .cd{display:none}.gt{display:none!important}}
+@media (max-width:620px){.g4,.gfoot{grid-template-columns:1fr!important}.caprow{grid-template-columns:48px 1fr!important}.caprow .cd{display:none}.gt{display:none!important}.capbtn{grid-template-columns:44px 1fr auto!important;gap:12px!important}.capbody{padding:0 12px 18px 56px!important}}
 @media (prefers-reduced-motion: reduce){.btnfx,.ar-r svg,.arc,.ph img,.tlink::after,.navl::after{transition:none!important}.btnfx:hover,.ar-r:hover svg,.arc:hover,.card:hover .arc,.card:hover .ph img,.zoom:hover img{transform:none!important}}
 </style>
 </helmet>
@@ -203,9 +222,26 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
       <p class="lab">How it works<i></i></p>
       <h2 id="s-proc" class="h2" style="margin-top: 32px; font-weight: 400">A process built on 30 years of acrylic.</h2>
       <p class="body" style="margin-top: 28px; max-width: 480px">Engineering, fabrication, installation and aftercare stay with one team, so nothing is lost between hand-offs.</p>
-      <ol style="list-style: none; padding: 0; margin: 40px 0 0; max-width: 480px">
+      <ol style="list-style: none; padding: 0; margin: 40px 0 0; max-width: 480px; border-bottom: 1px solid #073b631f">
         <sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
-          <li style="display: flex; gap: 24px; padding: 16px 0; border-top: 1px solid #073b631f; font-size: 17px"><span style="color: #4b8db3; width: 24px">0{{s.n}}</span><span>{{s.t}}</span></li>
+          <li style="border-top: 1px solid #073b631f">
+            <button type="button" class="stepbtn" onClick="{{s.toggle}}" aria-expanded="{{s.expanded}}">
+              <span style="display: flex; align-items: center; gap: 24px">
+                <span class="stepnum">0{{s.n}}</span>
+                <span style="font-weight: 400">{{s.t}}</span>
+              </span>
+              <span class="steparr" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate({{s.rot}}deg); transition: transform 240ms ease">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </button>
+            <sc-if value="{{s.open}}" hint-placeholder-val="{{ false }}">
+              <div class="stepbody">
+                <p>{{s.d}}</p>
+              </div>
+            </sc-if>
+          </li>
         </sc-for>
       </ol>
       <div style="margin-top: 44px"><a class="btn btnfx" href="/process/">Our process</a></div>
@@ -215,19 +251,40 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
 
 <!-- 7. Capabilities (navy, numbered list) -->
 <section id="capabilities" class="sec dark" aria-labelledby="s-cap" style="color: #ffffff; background-color: #111111; padding: clamp(64px, 6vw, 88px) 0">
-  <div class="wrap g2" style="display: grid; grid-template-columns: 5fr 7fr; gap: clamp(48px, 8vw, 128px)">
-    <div>
+  <div class="wrap g2" style="display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 4vw, 64px); align-items: start">
+    <div style="max-width: 440px">
       <p class="lab">Capabilities<i></i></p>
-      <h2 id="s-cap" class="h2" style="margin-top: 24px; font-weight: 400; font-size: clamp(34px, 3.6vw, 50px)">What we build, start to finish.</h2>
-      <p class="body" style="margin-top: 20px; max-width: 380px">From engineering input to post-install inspection, SAS handles the complete scope.</p>
+      <h2 id="s-cap" class="h2" style="margin-top: 24px; font-weight: 400; font-size: clamp(34px, 3.8vw, 48px); line-height: 1.12">What we build, start to finish.</h2>
+      <p class="body" style="margin-top: 20px; font-size: 16px; line-height: 1.65; color: #9fb9d5">From engineering input to post-install inspection, SAS handles the complete scope.</p>
+
+      <div style="margin-top: 28px; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid #4b8db34d; position: relative; background: #071a33">
+        <img src="{{activeCapImg}}" alt="{{activeCapTitle}}" style="display: block; width: 100%; height: 100%; object-fit: cover; transition: opacity 300ms ease, transform 500ms ease">
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 18px; background: linear-gradient(180deg, transparent, rgba(7, 26, 51, 0.92)); display: flex; justify-content: space-between; align-items: flex-end">
+          <div>
+            <span style="display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #4b8db3; font-weight: 600">Capability 0{{activeCapNum}}</span>
+            <span style="display: block; font-size: 16px; font-weight: 400; color: #ffffff; margin-top: 2px">{{activeCapTitle}}</span>
+          </div>
+        </div>
+      </div>
     </div>
     <div>
       <sc-for list="{{caps}}" as="c" hint-placeholder-count="6">
-        <a class="caprow ar-r" href="{{c.href}}">
-          <span style="font-size: 14px; color: #4b8db3">0{{c.n}}</span>
-          <span><span style="display: block; font-size: 22px; font-weight: 300">{{c.title}}</span></span>
-          <svg class="gt" width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="#ffffff" stroke-width="1.5" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"></path></svg>
-        </a>
+        <div class="capitem">
+          <button type="button" class="capbtn" onClick="{{c.toggle}}" onMouseEnter="{{c.hover}}" aria-expanded="{{c.expanded}}">
+            <span class="capnum">0{{c.n}}</span>
+            <span class="captitle">{{c.title}}</span>
+            <span class="caparr" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate({{c.rot}}deg); transition: transform 240ms ease">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </button>
+          <sc-if value="{{c.open}}" hint-placeholder-val="{{ false }}">
+            <div class="capbody">
+              <p>{{c.desc}}</p>
+            </div>
+          </sc-if>
+        </div>
       </sc-for>
     </div>
   </div>
@@ -343,7 +400,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { menu: false, acc: 0 };
+    this.state = { menu: false, acc: 0, stepAcc: -1, capAcc: -1, activeCap: 0 };
   }
   renderVals() {
     const I = {
@@ -368,15 +425,60 @@ class Component extends DCLogic {
       { title: 'Zoos & Wildlife Parks', desc: 'Habitat viewing panels and barrier glazing built for animals and crowds.', tags: [{t:'Habitats'},{t:'Barriers'}], icon: 'M5 21c0-8 5-14 15-16-1 10-7 15-15 16zM5 21l8-8' },
       { title: 'Architectural', desc: 'Structural acrylic for commercial, hospitality and one-of-a-kind spaces.', tags: [{t:'Commercial'},{t:'Custom'}], icon: 'M4 21V7l8-4 8 4v14M4 21h16M9 21v-6h6v6M9 10h.01M15 10h.01' }
     ];
-    const steps = ['Engineering & planning', 'Fabrication in Houston', 'Delivery & installation', 'Sealing & aftercare'].map((t, i) => ({ t, n: i + 1 }));
-    const caps = [
-      ['Fabrication', 'Custom structural acrylic to exact specifications, US-made.'],
-      ['Installation', 'Professional installation by our own crew.'],
-      ['Inspection', 'Structural assessment and condition reporting.'],
-      ['Refurbishment', 'Restoring clarity and structural integrity.'],
-      ['Waterproofing', 'Long-lasting sealant for acrylic joints and frames.'],
-      ['Engineering Support', 'Technical input from concept through construction drawings.']
-    ].map(([title, desc], i) => ({ title, desc, n: i + 1, href: '/capabilities/' }));
+    const stepsData = [
+      {
+        t: 'Engineering & planning',
+        d: 'Finite element analysis (FEA), hydrostatic load calculations, and precision shop drawings completed before fabrication starts, in full coordination with your engineer of record.'
+      },
+      {
+        t: 'Fabrication in Houston',
+        d: 'Cast acrylic thermoformed, precision-machined, and optically bonded in our Houston facility, followed by controlled annealing to guarantee structural strength and optical clarity.'
+      },
+      {
+        t: 'Delivery & installation',
+        d: 'Turnkey logistics and specialized on-site rigging by our own crew, setting panels with millimetric accuracy using custom vacuum lifting equipment and cranes.'
+      },
+      {
+        t: 'Sealing & aftercare',
+        d: 'Proprietary rebated sealants engineered to withstand constant hydrostatic pressure and UV exposure, backed by comprehensive inspection, polishing, and maintenance support.'
+      }
+    ];
+    const steps = stepsData.map((s, i) => {
+      const open = this.state.stepAcc === i;
+      return {
+        ...s,
+        n: i + 1,
+        open,
+        expanded: open ? 'true' : 'false',
+        rot: open ? 180 : 0,
+        toggle: () => this.setState({ stepAcc: open ? -1 : i })
+      };
+    });
+    const capsData = [
+      { title: 'Fabrication', desc: 'Custom thermoformed, machined, and optically bonded structural acrylic built in our Houston facility to exact tolerances.', img: I.c869 },
+      { title: 'Installation', desc: 'Professional turnkey installation and precision setting by our own certified rigging crew, working directly with your GC.', img: I.c400 },
+      { title: 'Inspection', desc: 'Comprehensive underwater and structural assessment, load validation, and condition reporting for existing panels.', img: I.c639 },
+      { title: 'Refurbishment', desc: 'Specialized multi-stage optical polishing, scratch removal, and structural restoration to return clarity and strength.', img: I.c385 },
+      { title: 'Waterproofing', desc: 'Proprietary rebated sealant systems engineered to withstand continuous hydrostatic load, chemical treated water, and UV exposure.', img: I.c440 },
+      { title: 'Engineering Support', desc: 'Finite element analysis (FEA), hydrostatic load calculations, and technical shop drawings from concept through construction.', img: I.c408 }
+    ];
+    const activeCapIndex = (this.state.activeCap >= 0 && this.state.activeCap < capsData.length) ? this.state.activeCap : 0;
+    const activeCapImg = capsData[activeCapIndex].img;
+    const activeCapTitle = capsData[activeCapIndex].title;
+    const activeCapNum = activeCapIndex + 1;
+    const caps = capsData.map((c, i) => {
+      const open = this.state.capAcc === i;
+      return {
+        ...c,
+        n: i + 1,
+        open,
+        expanded: open ? 'true' : 'false',
+        rot: open ? 180 : 0,
+        hover: () => this.setState({ activeCap: i }),
+        toggle: () => this.setState({ activeCap: i, capAcc: open ? -1 : i }),
+        href: '/capabilities/'
+      };
+    });
     const accData = [
       { t: 'Engineering-first', d: 'Load calculations and shop drawings are completed before anything is fabricated, and we coordinate with your engineer of record.' },
       { t: 'One team, full scope', d: 'The crew that fabricates your acrylic is the crew that sets, seals and inspects it, working alongside your builder or GC.' }
@@ -394,7 +496,7 @@ class Component extends DCLogic {
       { h: 'Capabilities', links: [L('Fabrication', '/capabilities/'), L('Installation', '/capabilities/'), L('Inspection', '/capabilities/'), L('Refurbishment', '/capabilities/')] },
       { h: 'Industries', links: [L('Luxury Pools', '/industries/#luxury-pools'), L('Public Aquariums', '/industries/#public-aquariums'), L('Zoos & Wildlife', '/industries/#zoos'), L('Architectural', '/industries/#architectural')] }
     ];
-    return { img, intro, projects, industries, steps, caps, acc, stats, fcols, menuOpen: this.state.menu ? 'true' : 'false', showMenu: this.state.menu, toggleMenu: () => this.setState({ menu: !this.state.menu }) };
+    return { img, intro, projects, industries, steps, caps, acc, stats, fcols, activeCapImg, activeCapTitle, activeCapNum, menuOpen: this.state.menu ? 'true' : 'false', showMenu: this.state.menu, toggleMenu: () => this.setState({ menu: !this.state.menu }) };
   }
 }
 </script>
