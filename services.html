@@ -196,13 +196,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
   <div class="wrap g2" style="display: grid; grid-template-columns: 5fr 6fr; gap: clamp(48px, 8vw, 128px); align-items: start">
     <div class="stick" style="position: sticky; top: 108px">
       <p class="lab">Services<i></i></p>
-      <h2 id="s-svc" class="h2" style="margin-top: 16px">Jump to the service you need</h2>
-      <div class="ph" style="margin-top: 20px; aspect-ratio: 16 / 10; max-height: clamp(200px, 28vh, 260px); width: 100%"><img src="{{cur.img}}" alt="{{cur.alt}}"></div>
-      <nav aria-label="Services" style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px">
-        <sc-for list="{{jump}}" as="j" hint-placeholder-count="6">
-          <a class="jrow" href="#{{j.id}}" aria-current="{{j.cur}}"><span style="color: #4b8db3">0{{j.n}}</span> {{j.label}}</a>
-        </sc-for>
-      </nav>
+      <h2 id="s-svc" class="h2" style="margin-top: 20px">Jump to the service you need</h2>
+      <div class="ph" style="margin-top: 28px; width: 100%; height: clamp(380px, 50vh, 480px); aspect-ratio: 4 / 3"><img src="{{cur.img}}" alt="{{cur.alt}}"></div>
     </div>
     <div>
       <sc-for list="{{svc}}" as="s" hint-placeholder-count="6">
