@@ -5,9 +5,9 @@
 <head>
 <meta charset="utf-8">
 <title>SAS Homepage — minimal v4 (colour guidelines)</title>
-<script src="./vendor/react.js"></script>
-<script src="./vendor/react-dom.js"></script>
-<script src="./support.js"></script>
+<script src="/vendor/react.js"></script>
+<script src="/vendor/react-dom.js"></script>
+<script src="/support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -118,11 +118,11 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
 <!-- 1. Header -->
 <header style="position: sticky; top: 0; z-index: 20; background: #ffffff; border-bottom: 1px solid #073b631f">
   <div class="wrap" style="display: flex; align-items: center; justify-content: space-between; height: 96px; gap: 24px">
-    <a href="#top" aria-label="Structural Acrylic Systems, home" style="display: inline-flex; align-items: center; text-decoration: none"><img src="./assets/sas-logo.png" alt="Structural Acrylic Systems" style="height: 46px; width: auto; display: block"></a>
+    <a href="#top" aria-label="Structural Acrylic Systems, home" style="display: inline-flex; align-items: center; text-decoration: none"><img src="/assets/sas-logo.png" alt="Structural Acrylic Systems" style="height: 46px; width: auto; display: block"></a>
     <nav class="navc" aria-label="Primary" style="display: flex; gap: 44px">
       <a class="navl" href="#top">Home</a>
-      <a class="navl" href="/about/">About</a>
-      <a class="navl" href="/capabilities/">Capabilities</a>
+      <a class="navl" href="/about">About</a>
+      <a class="navl" href="/capabilities">Capabilities</a>
       <a class="navl" href="#featured">Projects</a>
       <a class="navl" href="#industries">Industries</a>
     </nav>
@@ -135,8 +135,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
   <sc-if value="{{showMenu}}" hint-placeholder-val="{{ false }}">
     <nav aria-label="Mobile" style="border-top: 1px solid #073b631f; background: #ffffff">
       <div class="wrap" style="display: flex; flex-direction: column; padding-top: 12px; padding-bottom: 20px">
-        <a class="fbig" href="/about/" onClick="{{toggleMenu}}">About</a>
-        <a class="fbig" href="/capabilities/" onClick="{{toggleMenu}}">Capabilities</a>
+        <a class="fbig" href="/about" onClick="{{toggleMenu}}">About</a>
+        <a class="fbig" href="/capabilities" onClick="{{toggleMenu}}">Capabilities</a>
         <a class="fbig" href="#featured" onClick="{{toggleMenu}}">Projects</a>
         <a class="fbig" href="#industries" onClick="{{toggleMenu}}">Industries</a>
         <a class="fbig" href="#contact" onClick="{{toggleMenu}}">Get in touch</a>
@@ -179,7 +179,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
         <p class="lab">Projects<i></i></p>
         <h2 id="s-proj" class="h2" style="margin-top: 32px; max-width: 620px; font-weight: 400">Acrylic that holds water, weight and attention.</h2>
       </div>
-      <div style="justify-self: end"><a class="tlink ar-r" href="/projects/">View all projects <svg width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"></path></svg></a></div>
+      <div style="justify-self: end"><a class="tlink ar-r" href="#featured">View all projects <svg width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"></path></svg></a></div>
     </div>
     <div class="g3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 80px">
       <sc-for list="{{projects}}" as="p" hint-placeholder-count="3">
@@ -249,7 +249,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
           </li>
         </sc-for>
       </ol>
-      <div style="margin-top: 44px"><a class="btn btnfx" href="/process/">Our process</a></div>
+      <div style="margin-top: 44px"><a class="btn btnfx" href="/about#process">Our process</a></div>
     </div>
   </div>
 </section>
@@ -261,7 +261,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
       <p class="lab">Capabilities<i></i></p>
       <h2 id="s-cap" class="h2" style="margin-top: 24px; font-weight: 400; font-size: clamp(34px, 3.8vw, 48px); line-height: 1.12">What we build, start to finish.</h2>
       <p class="body" style="margin-top: 20px; font-size: 16px; line-height: 1.65; color: #9fb9d5">From engineering input to post-install inspection, SAS handles the complete scope.</p>
-      <div style="margin-top: 16px"><a class="tlink ar-r" href="/capabilities/" style="color: #6cb8f0; font-size: 12px; font-weight: 700; letter-spacing: 0.14em">Explore all capabilities <svg width="14" height="9" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"></path></svg></a></div>
+      <div style="margin-top: 16px"><a class="tlink ar-r" href="/capabilities" style="color: #6cb8f0; font-size: 12px; font-weight: 700; letter-spacing: 0.14em">Explore all capabilities <svg width="14" height="9" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"></path></svg></a></div>
 
       <div style="margin-top: 28px; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid #4b8db34d; position: relative; background: #071a33">
         <img src="{{activeCapImg}}" alt="{{activeCapTitle}}" style="display: block; width: 100%; height: 100%; object-fit: cover; transition: opacity 300ms ease, transform 500ms ease">
@@ -339,7 +339,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
   <div class="wrap g2" style="display: grid; grid-template-columns: 4fr 4fr 4fr; gap: clamp(32px, 5vw, 72px); align-items: center">
     <div>
       <h2 id="s-founder" class="h2" style="font-weight: 400">Meet the founder</h2>
-      <div style="margin-top: 40px"><a class="btn btnfx" href="/about/">About SAS</a></div>
+      <div style="margin-top: 40px"><a class="btn btnfx" href="/about">About SAS</a></div>
     </div>
     <div class="ph zoom" style="aspect-ratio: 4 / 5; border-radius: 4px"><img src="{{img.founder}}" alt="SAS crew setting a structural acrylic panel on site" style="filter: grayscale(1) contrast(1.05)"></div>
     <div>
@@ -360,7 +360,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
       <h2 id="s-cta" class="h2" style="margin-top: 24px; font-size: clamp(38px, 4.2vw, 60px); font-weight: 400">Ready to discuss your project?</h2>
       <p class="body" style="margin-top: 20px; max-width: 520px; font-size: 17px">Talk directly with Bart, from a single pool panel to a full aquarium build. Every enquiry gets a reply from the founder.</p>
       <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px">
-        <a class="btn btnfx ar-r" href="/contact/">Discuss your project <svg width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"></path></svg></a>
+        <a class="btn btnfx ar-r" href="#contact">Discuss your project <svg width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"></path></svg></a>
         <a class="btn o btnfx" href="tel:+10000000000">Call Bart</a>
       </div>
     </div>
@@ -377,7 +377,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
   <div class="wrap">
     <div class="gfoot" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px">
       <div>
-        <a href="#top" aria-label="Structural Acrylic Systems, home" style="display: inline-flex; align-items: center; text-decoration: none"><img src="./assets/sas-logo-white.png" alt="Structural Acrylic Systems" style="height: 52px; width: auto; display: block"></a>
+        <a href="#top" aria-label="Structural Acrylic Systems, home" style="display: inline-flex; align-items: center; text-decoration: none"><img src="/assets/sas-logo-white.png" alt="Structural Acrylic Systems" style="height: 52px; width: auto; display: block"></a>
       </div>
       <sc-for list="{{fcols}}" as="f" hint-placeholder-count="4">
         <div>
@@ -387,15 +387,15 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
       </sc-for>
     </div>
     <div class="g4" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px; margin-top: 88px">
-      <a class="fbig" href="/about/">About</a>
+      <a class="fbig" href="/about">About</a>
       <a class="fbig" href="#process">Process</a>
-      <a class="fbig" href="/capabilities/">Capabilities</a>
+      <a class="fbig" href="/capabilities">Capabilities</a>
       <a class="fbig" href="#industries">Industries</a>
       <a class="fbig" href="#contact">Contact</a>
     </div>
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 56px; font-size: 13px; color: #ffffff">
       <span>© 2026 Structural Acrylic Systems, LLC. All rights reserved.</span>
-      <span style="display: flex; gap: 28px"><a class="flink" href="/privacy/" style="font-size: 13px; line-height: 1">Privacy Policy</a><a class="flink" href="/terms/" style="font-size: 13px; line-height: 1">Terms</a><a class="flink" href="#top" style="font-size: 13px; line-height: 1">Back to top ↑</a></span>
+      <span style="display: flex; gap: 28px"><a class="flink" href="#" style="font-size: 13px; line-height: 1">Privacy Policy</a><a class="flink" href="#" style="font-size: 13px; line-height: 1">Terms</a><a class="flink" href="#top" style="font-size: 13px; line-height: 1">Back to top ↑</a></span>
     </div>
   </div>
 </footer>
@@ -410,9 +410,9 @@ class Component extends DCLogic {
   }
   renderVals() {
     const I = {
-      c385: './assets/5d7bcc801adac727a0776ddae8990477.jpg', c394: './assets/029debd378300319d616b51df9e58714.jpg', c400: './assets/b965119dd82acd3d263984228dcb23d7.jpg',
-      c408: './assets/0e79903d69664deb830d59b448139ecb.jpg', c411: './assets/c7b8334e2b7306163f7ddf38bb3386e1.jpg', c440: './assets/e79dc0ae2e07e80822658f762baaed0f.jpg',
-      c639: './assets/da08b2474e1152c78e91873ee4655eaf.jpg', c869: './assets/a8e8f3676f885fc0dc96e0623eeb495a.jpg', c870: './assets/978ebc356a34f1c544500fa1ce727985.jpg'
+      c385: '/assets/5d7bcc801adac727a0776ddae8990477.jpg', c394: '/assets/029debd378300319d616b51df9e58714.jpg', c400: '/assets/b965119dd82acd3d263984228dcb23d7.jpg',
+      c408: '/assets/0e79903d69664deb830d59b448139ecb.jpg', c411: '/assets/c7b8334e2b7306163f7ddf38bb3386e1.jpg', c440: '/assets/e79dc0ae2e07e80822658f762baaed0f.jpg',
+      c639: '/assets/da08b2474e1152c78e91873ee4655eaf.jpg', c869: '/assets/a8e8f3676f885fc0dc96e0623eeb495a.jpg', c870: '/assets/978ebc356a34f1c544500fa1ce727985.jpg'
     };
     const img = { hero: I.c408, p1: I.c385, p2: I.c394, why: I.c440, cta: I.c394, founder: I.c400, band: I.c870 };
     const intro = [
@@ -421,9 +421,9 @@ class Component extends DCLogic {
       { k: 'Core values', v: 'Engineering before fabrication. One team, full scope. The founder on every project.' }
     ];
     const projects = [
-      { title: 'Luxury residential pool window', cat: 'Luxury Pools · Texas', img: I.c400, alt: 'SAS crew setting an acrylic panel beside a residential pool', href: '/projects/' },
-      { title: 'Underwater viewing window', cat: 'Inspection & Aftercare', img: I.c639, alt: 'Diver inspecting an underwater acrylic window', href: '/projects/' },
-      { title: 'Large-format panel, craned in', cat: 'Custom & Curved Panels', img: I.c869, alt: 'Large acrylic panel lifted by crane', href: '/projects/' }
+      { title: 'Luxury residential pool window', cat: 'Luxury Pools · Texas', img: I.c400, alt: 'SAS crew setting an acrylic panel beside a residential pool', href: '/#featured' },
+      { title: 'Underwater viewing window', cat: 'Inspection & Aftercare', img: I.c639, alt: 'Diver inspecting an underwater acrylic window', href: '/#featured' },
+      { title: 'Large-format panel, craned in', cat: 'Custom & Curved Panels', img: I.c869, alt: 'Large acrylic panel lifted by crane', href: '/#featured' }
     ];
     const industries = [
       { title: 'Luxury Pools', desc: 'Viewing panels, pool walls and complete pool glazing for private residences.', tags: [{t:'Pool windows'},{t:'Pool walls'}], icon: 'M2 16c2 0 2-1.5 4-1.5s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M2 20c2 0 2-1.5 4-1.5s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M7 12V4a2 2 0 0 1 4 0M13 12V4a2 2 0 0 1 4 0M7 7h6' },
@@ -482,7 +482,7 @@ class Component extends DCLogic {
         rot: open ? 180 : 0,
         hover: () => this.setState({ activeCap: i }),
         toggle: () => this.setState({ activeCap: i, capAcc: open ? -1 : i }),
-        href: '/capabilities/'
+        href: '/capabilities'
       };
     });
     const accData = [
@@ -497,10 +497,10 @@ class Component extends DCLogic {
     ];
     const L = (t, href) => ({ t, href });
     const fcols = [
-      { h: 'Houston, TX', links: [L('[Street address]', '#contact'), L('[(XXX) XXX-XXXX]', 'tel:+10000000000'), L('[hello@yourdomain.com]', 'mailto:hello@yourdomain.com')] },
-      { h: 'Company', links: [L('About SAS', '/about/'), L('Bart Baker', '/about/#founder'), L('Our process', '/process/'), L('FAQs', '/faqs/')] },
-      { h: 'Capabilities', links: [L('Fabrication', '/capabilities/'), L('Installation', '/capabilities/'), L('Inspection', '/capabilities/'), L('Refurbishment', '/capabilities/')] },
-      { h: 'Industries', links: [L('Luxury Pools', '/industries/#luxury-pools'), L('Public Aquariums', '/industries/#public-aquariums'), L('Zoos & Wildlife', '/industries/#zoos'), L('Architectural', '/industries/#architectural')] }
+      { h: 'Houston, TX', links: [L('Houston, TX, USA', '#contact'), L('[(XXX) XXX-XXXX]', 'tel:+10000000000'), L('bart@structuralacrylicsystems.com', 'mailto:bart@structuralacrylicsystems.com')] },
+      { h: 'Company', links: [L('About SAS', '/about'), L('Bart Baker', '/about#leader'), L('Our process', '/about#process'), L('FAQs', '/about#process')] },
+      { h: 'Capabilities', links: [L('Fabrication', '/capabilities'), L('Installation', '/capabilities'), L('Inspection', '/capabilities'), L('Refurbishment', '/capabilities')] },
+      { h: 'Industries', links: [L('Luxury Pools', '/#industries'), L('Public Aquariums', '/#industries'), L('Zoos & Wildlife', '/#industries'), L('Architectural', '/#industries')] }
     ];
     return { img, intro, projects, industries, steps, caps, acc, stats, fcols, activeCapImg, activeCapTitle, activeCapNum, menuOpen: this.state.menu ? 'true' : 'false', showMenu: this.state.menu, toggleMenu: () => this.setState({ menu: !this.state.menu }) };
   }
