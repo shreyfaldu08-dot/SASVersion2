@@ -2,9 +2,28 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/((?!assets/|vendor/|.*\\..*).*)",
-      "destination": "/index.html"
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/about/",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/capabilities",
+      "destination": "/capabilities/index.html"
+    },
+    {
+      "source": "/capabilities/",
+      "destination": "/capabilities/index.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/capabilities/index.html"
+    },
+    {
+      "source": "/services/",
+      "destination": "/capabilities/index.html"
     }
   ]
 }
-
