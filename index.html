@@ -119,12 +119,12 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
 <header style="position: sticky; top: 0; z-index: 20; background: #ffffff; border-bottom: 1px solid #073b631f">
   <div class="wrap" style="display: flex; align-items: center; justify-content: space-between; height: 96px; gap: 24px">
     <a href="#top" aria-label="Structural Acrylic Systems, home" style="display: inline-flex; align-items: center; text-decoration: none"><img src="/assets/sas-logo.png" alt="Structural Acrylic Systems" style="height: 46px; width: auto; display: block"></a>
-    <nav class="navc" aria-label="Primary" style="display: flex; gap: 44px">
+    <nav class="navc" aria-label="Primary" style="display: flex; gap: clamp(24px, 3vw, 44px)">
       <a class="navl cur" href="#top" aria-current="page">Home</a>
       <a class="navl" href="/about">About</a>
       <a class="navl" href="/capabilities">Capabilities</a>
-      <a class="navl" href="#featured">Projects</a>
-      <a class="navl" href="#industries">Industries</a>
+      <a class="navl" href="/tradeshow">Trade Show</a>
+      <a class="navl" href="/contact">Contact</a>
     </nav>
     <div style="display: flex; align-items: center; gap: 28px">
       <a class="navc btn btnfx ar-r" href="#contact" style="min-height: 46px; padding: 0 22px">Get in touch <svg width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"></path></svg></a>
@@ -137,9 +137,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
         <a class="fbig" href="/" onClick="{{toggleMenu}}">Home</a>
         <a class="fbig" href="/about" onClick="{{toggleMenu}}">About</a>
         <a class="fbig" href="/capabilities" onClick="{{toggleMenu}}">Capabilities</a>
-        <a class="fbig" href="/#featured" onClick="{{toggleMenu}}">Projects</a>
-        <a class="fbig" href="/#industries" onClick="{{toggleMenu}}">Industries</a>
-        <a class="fbig" href="/contact" onClick="{{toggleMenu}}">Get in touch</a>
+        <a class="fbig" href="/tradeshow" onClick="{{toggleMenu}}">Trade Show</a>
+        <a class="fbig" href="/contact" onClick="{{toggleMenu}}">Contact</a>
       </div>
     </nav>
   </sc-if>
