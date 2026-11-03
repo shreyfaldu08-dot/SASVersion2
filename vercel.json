@@ -24,7 +24,7 @@
     },
     {
       "source": "/contact",
-      "destination": "/index.html"
+      "destination": "/contact.html"
     },
     {
       "source": "/process",

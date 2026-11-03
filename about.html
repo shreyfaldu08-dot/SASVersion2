@@ -169,7 +169,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
     <p style="margin-top: 16px; font-size: 15px; line-height: 1.8; text-align: center"><a class="tlink" href="tel:+10000000000" style="min-height: 0; font-size: 14px; letter-spacing: 0.04em; text-transform: none">[(XXX) XXX-XXXX]</a><br><a class="tlink" href="mailto:bart@structuralacrylicsystems.com" style="min-height: 0; font-size: 14px; letter-spacing: 0.04em; text-transform: none">bart@structuralacrylicsystems.com</a></p>
     <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid #073b631f; text-align: center">
       <p style="font-size: 26px; font-weight: 300; color: #073b63">Got a project in mind?</p>
-      <div style="margin-top: 24px"><a class="btn btnfx" href="/#contact">Let's talk</a></div>
+      <div style="margin-top: 24px"><a class="btn btnfx" href="/contact">Let's talk</a></div>
     </div>
     <div style="display: flex; justify-content: center; gap: 28px; margin-top: auto; padding-top: 40px">
       <a class="flink dk" href="#">LinkedIn</a><a class="flink dk" href="#">Instagram</a><a class="flink dk" href="#">YouTube</a>
@@ -214,7 +214,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
         </sc-for>
       </div>
       <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; margin-top: 36px">
-        <a class="btn btnfx" href="/#contact">Discuss Your Project</a>
+        <a class="btn btnfx" href="/contact">Discuss Your Project</a>
         <a class="tlink ar-r" href="#leader">Learn more: Bart's background <svg width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"></path></svg></a>
       </div>
     </div>
@@ -331,7 +331,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
   <div class="wrap g2" style="display: grid; grid-template-columns: 4fr 4fr 4fr; gap: clamp(32px, 5vw, 72px); align-items: center">
     <div>
       <h2 id="s-founder" class="h2">Meet the founder</h2>
-      <div style="margin-top: 40px"><a class="btn btnfx" href="/#contact">Discuss Your Project</a></div>
+      <div style="margin-top: 40px"><a class="btn btnfx" href="/contact">Discuss Your Project</a></div>
     </div>
     <div class="ph zoom" style="aspect-ratio: 4 / 5"><img src="{{img.founder}}" alt="Placeholder until Bart Baker's headshot is supplied: SAS acrylic panel delivered by crane" style="filter: grayscale(1) contrast(1.05)"></div>
     <div>
@@ -384,7 +384,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
       <a class="fbig" href="#process">Process</a>
       <a class="fbig" href="/capabilities">Capabilities</a>
       <a class="fbig" href="/#industries">Industries</a>
-      <a class="fbig" href="/#contact">Contact</a>
+      <a class="fbig" href="/contact">Contact</a>
     </div>
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 56px; font-size: 13px; color: #ffffff">
       <span>© 2026 Structural Acrylic Systems, LLC. All rights reserved.</span>
@@ -434,7 +434,7 @@ class Component extends DCLogic {
       { h: 'Company', links: [L('About SAS', '/about'), L('Bart Baker', '/about#leader'), L('Our Process', '/about#process'), L('FAQs', '/about#process')] },
       { h: 'Capabilities', links: [L('Fabrication', '/capabilities'), L('Installation', '/capabilities'), L('Inspection', '/capabilities'), L('Refurbishment', '/capabilities'), L('Waterproofing', '/capabilities')] },
       { h: 'Industries', links: [L('Luxury Pools', '/#industries'), L('Public Aquariums', '/#industries'), L('Zoos & Wildlife Parks', '/#industries'), L('Architectural', '/#industries')] },
-      { h: 'Contact', links: [L('Phone: [(XXX) XXX-XXXX]', 'tel:+10000000000'), L('Email: bart@structuralacrylicsystems.com', 'mailto:bart@structuralacrylicsystems.com'), L('Houston, Texas, USA', '#contact')] }
+      { h: 'Contact', links: [L('Phone: [(XXX) XXX-XXXX]', 'tel:+10000000000'), L('Email: bart@structuralacrylicsystems.com', 'mailto:bart@structuralacrylicsystems.com'), L('Houston, Texas, USA', '/contact')] }
     ];
     return { flowImg, img, career, commits, flow, bullets, fcols,
       menuOpen: this.state.menu ? 'true' : 'false', showMenu: this.state.menu, toggleMenu: () => this.setState({ menu: !this.state.menu }),
