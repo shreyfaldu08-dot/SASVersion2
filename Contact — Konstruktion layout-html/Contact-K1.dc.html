@@ -1,5 +1,24 @@
 <!doctype html>
-<meta charset="utf-8"><style data-dc-design-system-vars>@layer{:root{--surface:#f4f8fc;--surface-raised:#ffffff;--surface-sunk:#e4eef8;--glacier:#d3e7fa;--line:#c9dbee;--line-strong:#5f84b0;--ink:#0a1b33;--ink-muted:#45607f;--brand:#1452b8;--brand-strong:#0c3a86;--on-brand:#ffffff;--abyss:#071a33;--abyss-raised:#0e2a4d;--on-abyss:#eaf4fd;--on-abyss-muted:#9fb9d5;--sky:#6cb8f0;--on-sky:#04101f;--signal:#a14a06;--signal-soft:#fdecd8;--link:#1452b8;--edge:inset 0 1px 0 #ffffff, 0 0 0 1px #c9dbee;--shadow-panel:inset 0 1px 0 #ffffff, 0 0 0 1px #c9dbee, 0 18px 40px -18px #0a1b3340;--shadow-abyss:inset 0 1px 0 #ffffff1a, 0 0 0 1px #1c3a60;--focus-ring:0 0 0 2px #f4f8fc, 0 0 0 4px #1452b8;--focus-ring-abyss:0 0 0 2px #071a33, 0 0 0 4px #6cb8f0;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--space-12:48px;--space-16:64px;--space-24:96px;--space-32:128px;--radius-xs:2px;--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--font-display:"Archivo", "Helvetica Neue", Arial, sans-serif;--font-sans:"Archivo", "Helvetica Neue", Arial, sans-serif;--font-mono:"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;--text-display-xl:700 76px/76px var(--font-display);--text-display:700 52px/56px var(--font-display);--text-heading-1:650 40px/46px var(--font-display);--text-heading-2:650 26px/32px var(--font-display);--text-heading-3:600 19px/26px var(--font-display);--text-lede:400 20px/31px var(--font-sans);--text-body:400 16px/26px var(--font-sans);--text-body-sm:400 14px/22px var(--font-sans);--text-label:600 14px/20px var(--font-sans);--text-eyebrow:500 12px/16px var(--font-mono);--text-spec:400 13px/20px var(--font-mono);--text-numeral:500 56px/56px var(--font-mono);}}</style>
+<meta charset="utf-8"><style data-dc-design-system-vars>@layer{:root{--surface:#f4f8fc;--surface-raised:#ffffff;--surface-sunk:#e4eef8;--glacier:#d3e7fa;--line:#c9dbee;--line-strong:#5f84b0;--ink:#0a1b33;--ink-muted:#45607f;--brand:#1452b8;--brand-strong:#0c3a86;--on-brand:#ffffff;--abyss:#071a33;--abyss-raised:#0e2a4d;--on-abyss:#eaf4fd;--on-abyss-muted:#9fb9d5;--sky:#6cb8f0;--on-sky:#04101f;--signal:#a14a06;--signal-soft:#fdecd8;--link:#1452b8;--edge:inset 0 1px 0 #ffffff, 0 0 0 1px #c9dbee;--shadow-panel:inset 0 1px 0 #ffffff, 0 0 0 1px #c9dbee, 0 18px 40px -18px #0a1b3340;--shadow-abyss:inset 0 1px 0 #ffffff1a, 0 0 0 1px #1c3a60;--focus-ring:0 0 0 2px #f4f8fc, 0 0 0 4px #1452b8;--focus-ring-abyss:0 0 0 2px #071a33, 0 0 0 4px #6cb8f0;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-8:32px;--space-12:48px;--space-16:64px;--space-24:96px;--space-32:128px;--radius-xs:2px;--radius-sm:4px;--radius-md:8px;--radius-lg:16px;--font-display:"Archivo", "Helvetica Neue", Arial, sans-serif;--font-sans:"Archivo", "Helvetica Neue", Arial, sans-serif;--font-mono:"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;--text-display-xl:700 76px/76px var(--font-display);--text-display:700 52px/56px var(--font-display);--text-heading-1:650 40px/46px var(--font-display);--text-heading-2:650 26px/32px var(--font-display);--text-heading-3:600 19px/26px var(--font-display);--text-lede:400 20px/31px var(--font-sans);--text-body:400 16px/26px var(--font-sans);--text-body-sm:400 14px/22px var(--font-sans);--text-label:600 14px/20px var(--font-sans);--text-eyebrow:500 12px/16px var(--font-mono);--text-spec:400 13px/20px var(--font-mono);--text-numeral:500 56px/56px var(--font-mono);}}
+/* Capabilities accordion as per homepage */
+.captitle{color:#ffffff}
+.capitem{border-top:1px solid #4b8db34d}
+.capitem:last-child{border-bottom:1px solid #4b8db34d}
+.capbtn{width:100%;display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:20px;padding:27px 0;border:0;background:none;font-family:inherit;color:#ffffff;cursor:pointer;text-align:left;transition:color 180ms ease}
+.capbtn:hover{color:#4b8db3}
+.capbtn .capnum{font-size:14px;color:#4b8db3;font-weight:600;font-family:var(--font-mono, monospace);transition:color 180ms ease}
+.capbtn .captitle{display:block;font-size:22px;font-weight:300;transition:color 180ms ease}
+.capbtn .caparr{display:inline-flex;align-items:center;justify-content:center;color:#4b8db3;width:24px;flex-shrink:0;transition:color 180ms ease}
+.capbtn:hover .caparr{color:#ffffff}
+.capbtn[aria-expanded="true"] .caparr{color:#ffffff}
+.capbody{padding:0 32px 20px 76px}
+.capbody p{font-size:15px;line-height:1.7;color:#9fb9d5;margin:0}
+@media (max-width:900px){
+  .capbtn{grid-template-columns:44px 1fr auto!important;gap:12px!important;padding:20px 0!important}
+  .capbody{padding:0 12px 18px 56px!important}
+}
+
+</style>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -139,6 +158,25 @@ textarea.inu{resize:vertical;line-height:26px;min-height:120px}
 .dclose:hover{border-color:#4b8db3;color:#4b8db3}
 @media (max-width:1000px){.ptgrid,.kint,.nxgrid{grid-template-columns:1fr}.office{position:static}.pband{height:320px}}
 @media (max-width:620px){.nxrow{grid-template-columns:48px 1fr}}
+
+/* Capabilities accordion as per homepage */
+.captitle{color:#ffffff}
+.capitem{border-top:1px solid #4b8db34d}
+.capitem:last-child{border-bottom:1px solid #4b8db34d}
+.capbtn{width:100%;display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:20px;padding:27px 0;border:0;background:none;font-family:inherit;color:#ffffff;cursor:pointer;text-align:left;transition:color 180ms ease}
+.capbtn:hover{color:#4b8db3}
+.capbtn .capnum{font-size:14px;color:#4b8db3;font-weight:600;font-family:var(--font-mono, monospace);transition:color 180ms ease}
+.capbtn .captitle{display:block;font-size:22px;font-weight:300;transition:color 180ms ease}
+.capbtn .caparr{display:inline-flex;align-items:center;justify-content:center;color:#4b8db3;width:24px;flex-shrink:0;transition:color 180ms ease}
+.capbtn:hover .caparr{color:#ffffff}
+.capbtn[aria-expanded="true"] .caparr{color:#ffffff}
+.capbody{padding:0 32px 20px 76px}
+.capbody p{font-size:15px;line-height:1.7;color:#9fb9d5;margin:0}
+@media (max-width:900px){
+  .capbtn{grid-template-columns:44px 1fr auto!important;gap:12px!important;padding:20px 0!important}
+  .capbody{padding:0 12px 18px 56px!important}
+}
+
 </style>
 </helmet>
 
@@ -315,6 +353,50 @@ textarea.inu{resize:vertical;line-height:26px;min-height:120px}
   </div>
 </section>
 
+
+<!-- 4b. Capabilities: What We Build (interactive capabilities accordion as per homepage) -->
+<section id="capabilities" class="sec dark" aria-labelledby="s-caps" style="background: #111111; color: #ffffff; padding: clamp(80px, 8vw, 120px) 0">
+  <div class="wrap g2" style="display: grid; grid-template-columns: 5fr 7fr; gap: clamp(48px, 8vw, 120px); align-items: start">
+    <div>
+      <p class="lab">Capabilities<i></i></p>
+      <h2 id="s-caps" class="h2" style="margin-top: 24px; font-weight: 400; font-size: clamp(34px, 3.8vw, 48px); line-height: 1.12">What We Build</h2>
+      <p class="body" style="margin-top: 20px; font-size: 16px; line-height: 1.65; color: #9fb9d5">From engineering input to post-install inspection, SAS handles the complete scope.</p>
+      <div style="margin-top: 20px"><a class="btn btnfx ar-r" href="/capabilities">Explore All Capabilities <svg width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"></path></svg></a></div>
+
+      <div style="margin-top: 28px; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid #4b8db34d; position: relative; background: #071a33">
+        <img src="{{capImg.img}}" alt="{{capImg.t}}" style="display: block; width: 100%; height: 100%; object-fit: cover; transition: opacity 300ms ease, transform 500ms ease">
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 18px; background: linear-gradient(180deg, transparent, rgba(7, 26, 51, 0.92)); display: flex; justify-content: space-between; align-items: flex-end">
+          <div>
+            <span style="display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #4b8db3; font-weight: 600">Capability 0{{capImg.n}}</span>
+            <span style="display: block; font-size: 16px; font-weight: 400; color: #ffffff; margin-top: 2px">{{capImg.t}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <sc-for list="{{caps}}" as="c" hint-placeholder-count="6">
+        <div class="capitem">
+          <button type="button" class="capbtn" onClick="{{c.toggle}}" onMouseEnter="{{c.hover}}" aria-expanded="{{c.expanded}}">
+            <span class="capnum">0{{c.n}}</span>
+            <span class="captitle">{{c.t}}</span>
+            <span class="caparr" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate({{c.rot}}deg); transition: transform 240ms ease">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </button>
+          <sc-if value="{{c.open}}" hint-placeholder-val="{{ false }}">
+            <div class="capbody">
+              <p>{{c.d}}</p>
+              <div style="margin-top: 10px"><a class="tlink ar-r" href="{{c.href}}" style="color: #4b8db3; font-size: 13px">Explore service <svg width="14" height="9" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"></path></svg></a></div>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
 <!-- 5. Footer -->
 <footer style="padding: clamp(80px, 9vw, 120px) 0 40px; background: #111111; color: #ffffff">
   <div class="wrap">
@@ -361,7 +443,7 @@ textarea.inu{resize:vertical;line-height:26px;min-height:120px}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { menu: false, drawer: false, type: null, files: false, sent: false, expo: false };
+    this.state = { menu: false, drawer: false, type: null, files: false, sent: false, expo: false , cap: 0, cop: -1};
   }
   componentDidMount() {
     if (typeof window === 'undefined') return;
@@ -387,7 +469,8 @@ class Component extends DCLogic {
     const cur = types.find((t) => t.id === this.state.type);
     const chips = types.map((t) => {
       const on = t.id === this.state.type;
-      return { ...t, on: on ? 'true' : 'false', bg: on ? '#073b63' : '#ffffff', fg: on ? '#ffffff' : '#073b63', ring: on ? '#073b63' : '#073b6340',
+      return {
+      caps, capImg, ...t, on: on ? 'true' : 'false', bg: on ? '#073b63' : '#ffffff', fg: on ? '#ffffff' : '#073b63', ring: on ? '#073b63' : '#073b6340',
         pick: () => this.setState({ type: this.state.type === t.id ? null : t.id }) };
     });
     const steps = [
@@ -404,6 +487,22 @@ class Component extends DCLogic {
       } catch (e) {}
     };
     const L = (t, href) => ({ t, href });
+    
+    const caps = [
+      { t: 'Fabrication', d: 'Custom thermoformed, machined, and optically bonded structural acrylic built in our Houston facility to exact tolerances.', href: '/capabilities#fabrication', img: '/assets/a8e8f3676f885fc0dc96e0623eeb495a.jpg' },
+      { t: 'Installation', d: 'Professional turnkey installation and precision setting by our own certified rigging crew, working directly with your GC.', href: '/capabilities#installation', img: '/assets/b965119dd82acd3d263984228dcb23d7.jpg' },
+      { t: 'Engineering Support', d: 'Finite element analysis (FEA), hydrostatic load calculations, and technical shop drawings from concept through construction.', href: '/capabilities#engineering', img: '/assets/0e79903d69664deb830d59b448139ecb.jpg' },
+      { t: 'Inspection', d: 'Comprehensive underwater and structural assessment, load validation, and condition reporting for existing panels.', href: '/capabilities#inspection', img: '/assets/da08b2474e1152c78e91873ee4655eaf.jpg' },
+      { t: 'Refurbishment and Polishing', d: 'Specialized multi-stage optical polishing, scratch removal, and structural restoration to return clarity and strength.', href: '/capabilities#refurbishment', img: '/assets/5d7bcc801adac727a0776ddae8990477.jpg' },
+      { t: 'Waterproofing and Sealing', d: 'Proprietary rebated sealant systems engineered to withstand continuous hydrostatic load, chemical treated water, and UV exposure.', href: '/capabilities#waterproofing', img: '/assets/e79dc0ae2e07e80822658f762baaed0f.jpg' }
+    ].map((c, i) => {
+      const open = this.state.cop === i;
+      return { ...c, n: i + 1, open, expanded: open ? 'true' : 'false', rot: open ? 180 : 0,
+        hover: () => { if (this.state.cap !== i) this.setState({ cap: i }); },
+        toggle: () => this.setState({ cop: open ? -1 : i, cap: i }) };
+    });
+    const capImg = caps[this.state.cap] || caps[0];
+
     const fcols = [
       { h: 'Company', links: [L('About SAS', '/about'), L('Bart Baker', '/about#leader'), L('Our Process', '/about#process'), L('Trade Show', '/tradeshow'), L('FAQs', '/about#process')] },
       { h: 'Capabilities', links: [L('Fabrication', '/capabilities'), L('Installation', '/capabilities'), L('Inspection', '/capabilities'), L('Refurbishment', '/capabilities'), L('Waterproofing', '/capabilities')] },
@@ -411,6 +510,7 @@ class Component extends DCLogic {
       { h: 'Contact', links: [L('Phone: [(XXX) XXX-XXXX]', 'tel:+10000000000'), L('Email: bart@structuralacrylicsystems.com', 'mailto:bart@structuralacrylicsystems.com'), L('Houston, Texas, USA', '/contact')] }
     ];
     return {
+      caps, capImg,
       menuOpen: this.state.menu ? 'true' : 'false', showMenu: this.state.menu, toggleMenu: () => this.setState({ menu: !this.state.menu }),
       showDrawer: this.state.drawer, drawerOpen: this.state.drawer ? 'true' : 'false', openDrawer: () => this.setState({ drawer: true, menu: false }), closeDrawer: () => this.setState({ drawer: false }),
       chips, hasType: !!cur, covers: cur ? cur.covers : '',
