@@ -118,6 +118,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
       <a class="navl cur" href="/capabilities" aria-current="page">Capabilities</a>
       <a class="navl" href="/#featured">Projects</a>
       <a class="navl" href="/#industries">Industries</a>
+      <a class="navl" href="/tradeshow">Trade Show</a>
     </nav>
     <div style="display: flex; align-items: center; gap: 28px">
       <button class="navc arc" aria-label="Search" style="display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border: 0; background: none; color: #073b63; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></button>
@@ -132,6 +133,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
         <a class="fbig" href="/capabilities" onClick="{{toggleMenu}}">Capabilities</a>
         <a class="fbig" href="/#featured" onClick="{{toggleMenu}}">Projects</a>
         <a class="fbig" href="/#industries" onClick="{{toggleMenu}}">Industries</a>
+        <a class="fbig" href="/tradeshow" onClick="{{toggleMenu}}">Trade Show</a>
         <a class="fbig" href="/#contact" onClick="{{toggleMenu}}">Get in touch</a>
       </div>
     </nav>
@@ -300,6 +302,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
       <a class="fbig" href="/about#process">Process</a>
       <a class="fbig" href="#top">Capabilities</a>
       <a class="fbig" href="/#industries">Industries</a>
+      <a class="fbig" href="/tradeshow">Trade Show</a>
       <a class="fbig" href="#contact">Contact</a>
     </div>
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 56px; font-size: 13px; color: #ffffff">
@@ -387,7 +390,7 @@ class Component extends DCLogic {
     const works = [['Luxury Pools', '/#industries'], ['Aquariums', '/#industries'], ['Zoos', '/#industries'], ['Architectural', '/#industries']].map(([t, href], i) => ({ t, href, n: i + 1 }));
     const L = (t, href) => ({ t, href });
     const fcols = [
-      { h: 'Company', links: [L('About SAS', '/about'), L('Bart Baker', '/about#leader'), L('Our Process', '/about#process'), L('FAQs', '/about#process')] },
+      { h: 'Company', links: [L('About SAS', '/about'), L('Bart Baker', '/about#leader'), L('Our Process', '/about#process'), L('Trade Show', '/tradeshow'), L('FAQs', '/about#process')] },
       { h: 'Capabilities', links: [L('Fabrication', '#fabrication'), L('Installation', '#installation'), L('Inspection', '#inspection'), L('Refurbishment', '#refurbishment'), L('Waterproofing', '#waterproofing')] },
       { h: 'Industries', links: [L('Luxury Pools', '/#industries'), L('Public Aquariums', '/#industries'), L('Zoos & Wildlife Parks', '/#industries'), L('Architectural', '/#industries')] },
       { h: 'Contact', links: [L('[(XXX) XXX-XXXX]', 'tel:+10000000000'), L('bart@structuralacrylicsystems.com', 'mailto:bart@structuralacrylicsystems.com'), L('Houston, Texas, USA', '/contact')] }

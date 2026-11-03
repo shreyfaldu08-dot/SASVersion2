@@ -135,6 +135,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
       <a class="navl" href="/capabilities">Capabilities</a>
       <a class="navl" href="/#featured">Projects</a>
       <a class="navl" href="/#industries">Industries</a>
+      <a class="navl" href="/tradeshow">Trade Show</a>
       <a class="navl" href="/about#process">FAQs</a>
     </nav>
     <div style="display: flex; align-items: center; gap: 28px">
@@ -151,6 +152,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
         <a class="fbig" href="/capabilities" onClick="{{toggleMenu}}">Capabilities</a>
         <a class="fbig" href="/#featured" onClick="{{toggleMenu}}">Projects</a>
         <a class="fbig" href="/#industries" onClick="{{toggleMenu}}">Industries</a>
+        <a class="fbig" href="/tradeshow" onClick="{{toggleMenu}}">Trade Show</a>
         <a class="fbig" href="/about#process" onClick="{{toggleMenu}}">FAQs</a>
         <a class="fbig" href="/#contact" onClick="{{toggleMenu}}">Contact us</a>
       </div>
@@ -384,6 +386,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #073b63;outline-offset:3p
       <a class="fbig" href="#process">Process</a>
       <a class="fbig" href="/capabilities">Capabilities</a>
       <a class="fbig" href="/#industries">Industries</a>
+      <a class="fbig" href="/tradeshow">Trade Show</a>
       <a class="fbig" href="/contact">Contact</a>
     </div>
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 56px; font-size: 13px; color: #ffffff">
@@ -431,7 +434,7 @@ class Component extends DCLogic {
     const bullets = ['US-based manufacturing and engineering', '30 years of large-scale project experience', 'One team for the full scope', 'Engineering input from day one', 'US-fabricated, no import lead times', 'Post-install support in scope'].map((t) => ({ t }));
     const L = (t, href) => ({ t, href });
     const fcols = [
-      { h: 'Company', links: [L('About SAS', '/about'), L('Bart Baker', '/about#leader'), L('Our Process', '/about#process'), L('FAQs', '/about#process')] },
+      { h: 'Company', links: [L('About SAS', '/about'), L('Bart Baker', '/about#leader'), L('Our Process', '/about#process'), L('Trade Show', '/tradeshow'), L('FAQs', '/about#process')] },
       { h: 'Capabilities', links: [L('Fabrication', '/capabilities'), L('Installation', '/capabilities'), L('Inspection', '/capabilities'), L('Refurbishment', '/capabilities'), L('Waterproofing', '/capabilities')] },
       { h: 'Industries', links: [L('Luxury Pools', '/#industries'), L('Public Aquariums', '/#industries'), L('Zoos & Wildlife Parks', '/#industries'), L('Architectural', '/#industries')] },
       { h: 'Contact', links: [L('Phone: [(XXX) XXX-XXXX]', 'tel:+10000000000'), L('Email: bart@structuralacrylicsystems.com', 'mailto:bart@structuralacrylicsystems.com'), L('Houston, Texas, USA', '/contact')] }

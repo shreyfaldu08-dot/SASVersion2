@@ -33,6 +33,18 @@
     {
       "source": "/faqs",
       "destination": "/about.html"
+    },
+    {
+      "source": "/tradeshow",
+      "destination": "/tradeshow.html"
+    },
+    {
+      "source": "/trade-show",
+      "destination": "/tradeshow.html"
+    },
+    {
+      "source": "/expo",
+      "destination": "/tradeshow.html"
     }
   ]
 }
