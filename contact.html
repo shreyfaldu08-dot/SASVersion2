@@ -468,8 +468,7 @@ class Component extends DCLogic {
     const cur = types.find((t) => t.id === this.state.type);
     const chips = types.map((t) => {
       const on = t.id === this.state.type;
-      return {
-      caps, capImg, ...t, on: on ? 'true' : 'false', bg: on ? '#073b63' : '#ffffff', fg: on ? '#ffffff' : '#073b63', ring: on ? '#073b63' : '#073b6340',
+      return { ...t, on: on ? 'true' : 'false', bg: on ? '#073b63' : '#ffffff', fg: on ? '#ffffff' : '#073b63', ring: on ? '#073b63' : '#073b6340',
         pick: () => this.setState({ type: this.state.type === t.id ? null : t.id }) };
     });
     const steps = [
